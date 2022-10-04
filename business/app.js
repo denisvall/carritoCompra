@@ -88,6 +88,7 @@ const addCar = e => {
 
 const setCar = obj => {
 
+    // console.log(obj)
     // crear objeto de producto
     const product = {
         id: obj.querySelector('.btnComprar').dataset.id,

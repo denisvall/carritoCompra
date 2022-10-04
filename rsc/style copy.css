@@ -10,6 +10,20 @@ body {
     /* Relleno superior igual a la altura de la cabecera*/
 }
 
+#main-header {
+    background: #333;
+    color: white;
+    height: 80px;
+    width: 100%;
+    /* hacemos que la cabecera ocupe el ancho completo de la página */
+    left: 0;
+    /* Posicionamos la cabecera al lado izquierdo */
+    top: 0;
+    /* Posicionamos la cabecera pegada arriba */
+    position: fixed;
+    /* Hacemos que la cabecera tenga una posición fija */
+}
+
 
 /*
  * Logo
@@ -38,9 +52,40 @@ body {
     color: #999;
 }
 
+
+/*
+ * Navegación
+ */
+
+nav {
+    float: right;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+}
+
+nav ul li a {
+    display: block;
+    padding: 0 10px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background: #0b76a6;
+}
+
 #main-content {
     background: white;
-    width: 95%;
+    width: 90%;
     max-width: 2048px;
     margin: 20px auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
