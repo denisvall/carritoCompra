@@ -48,17 +48,17 @@ const fetchData = async() => {
 }
 
 const drawProducts = (data) => {
-
     // Recorrer los elementos para pintar las cards
     data.forEach(element => {
-        templateCard.querySelector('h5').textContent = element.title;
-        templateCard.querySelector('p span').textContent = element.precio;
-        templateCard.querySelector('img').setAttribute('src', element.thumbnailUrl);
-        templateCard.querySelector('img').setAttribute('alt', element.title);
-        templateCard.querySelector('.btnComprar').dataset.id = element.id;
+        const clone = templateCard.cloneNode(true);
+
+        clone.querySelector('h5').textContent = element.title;
+        clone.querySelector('p span').textContent = element.precio;
+        clone.querySelector('img').setAttribute('src', element.thumbnailUrl);
+        clone.querySelector('img').setAttribute('alt', element.title);
+        clone.querySelector('.btnComprar').dataset.id = element.id;
         // templateCard.querySelector('.btnComprar').setAttribute('id', element.id);
 
-        const clone = templateCard.cloneNode(true);
         fragment.appendChild(clone);
 
     });
@@ -117,14 +117,16 @@ const drawCar = () => {
 
     // Recorrer el array de objetos para pintar el carrito
     Object.values(carrito).forEach(item => {
-        templatecarrito.querySelector('th').textContent = item.id;
-        templatecarrito.querySelectorAll('td')[0].textContent = item.nombre;
-        templatecarrito.querySelectorAll('td')[1].textContent = item.cantidad;
-        templatecarrito.querySelector('.btnMas').dataset.id = item.id;
-        templatecarrito.querySelector('.btnMenos').dataset.id = item.id;
-        templatecarrito.querySelectorAll('td span')[0].textContent = item.cantidad * item.precio;
 
         const clon = templatecarrito.cloneNode(true);
+
+        clon.querySelector('th').textContent = item.id;
+        clon.querySelectorAll('td')[0].textContent = item.nombre;
+        clon.querySelectorAll('td')[1].textContent = item.cantidad;
+        clon.querySelector('.btnMas').dataset.id = item.id;
+        clon.querySelector('.btnMenos').dataset.id = item.id;
+        clon.querySelectorAll('td span')[0].textContent = item.cantidad * item.precio;
+
         fragment.appendChild(clon);
     });
 
