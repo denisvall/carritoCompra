@@ -37,9 +37,13 @@ items.addEventListener('click', e => {
 // Obtener los datos a pintar
 const fetchData = async() => {
     try {
+
+        // const res = await fetch('http://localhost:5011/TipoCliente/ListarAsync');
+
         const res = await fetch('./data/data.json');
         const data = await res.json();
 
+        // console.log(data);
         // Pintar las cards de productos
         drawProducts(data);
     } catch (error) {
