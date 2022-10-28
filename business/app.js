@@ -43,7 +43,7 @@ const fetchData = async() => {
         const res = await fetch('./data/data.json');
         const data = await res.json();
 
-        // console.log(data);
+        console.log(data);
         // Pintar las cards de productos
         drawProducts(data);
     } catch (error) {
